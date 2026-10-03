@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# 打包/环境
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+.Python
+
+# 训练产物
+checkpoints/
+runs/
+outputs/
+*.pth
+*.pt
+*.ckpt
+*.log
+
+# 数据集目录整体忽略，回溯文件名后单独放行 Scenic-MM。
+# 注意 *.pt 规则在前，若不在此处显式反选，data/scenic_mm.pt 仍会被忽略。
+data/*
+!data/scenic_mm.pt
+
+# 渲染出的视频帧（render_frames.py 可重新生成，单帧约百 KB、总量上 GB）
+frames/
+_synth_out/
+
+# 编辑器
+.idea/
+.vscode/
+.ipynb_checkpoints/
+
+# 系统
+.DS_Store
+Thumbs.db

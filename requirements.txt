@@ -1,0 +1,14 @@
+# HOINet 运行依赖
+#
+# 训练、评估、消融与鲁棒性的核心链路由本文件覆盖，只依赖 PyTorch 与 PyYAML，
+# 不引入任何其他深度学习框架或第三方模型库：第 3 章的全部算子（切比雪夫图
+# 卷积、因果时间卷积、单调读出、展开反演层）均在 src/model/ops.py 与
+# src/model/hoi_net.py 内实现。
+#
+# 版本下限按论文 §4.3 实验环境的实际版本给出。PyTorch 2.x 的任意版本均可运行；
+# 若需 GPU 版本，请按 https://pytorch.org 的指引替换 torch 一行的安装源。
+torch>=2.0,<3.0
+PyYAML>=6.0
+
+# 图像渲染与真实图像案例脚本所需的可选依赖（opencv、scipy、matplotlib）单列在
+# requirements-render.txt；核心训练与评估链路不依赖它们。

@@ -1,0 +1,12 @@
+# 图像相关脚本的可选依赖
+#
+# render_frames.py 把基准的真值张量渲染成视频通道的图像，供人工核对视频
+# 观测算子与画面是否一致；real_case_ucfqnrf.py 与 real_case_figure*.py 在
+# 公开标注上实例化观测模型，产出论文 §4.1 的真实图像案例与其配图。
+# 训练、评估、消融与鲁棒性实验均不需要本文件中的依赖。
+#
+#     pip install -r requirements.txt -r requirements-render.txt
+numpy>=1.22
+opencv-python>=4.6
+scipy>=1.8
+matplotlib>=3.5
